@@ -8,4 +8,6 @@ RUN npm install
 
 COPY . .
 
+VOLUME [ "/app/feedback" ]
+
 CMD ["node","server.js"]
