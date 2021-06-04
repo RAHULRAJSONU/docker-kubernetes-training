@@ -36,6 +36,7 @@ app.post('/create', async (req, res) => {
     if (exists) {
       res.redirect('/exists');
     } else {
+      //copying file from folder outside container
       await fs.copyFile(tempFilePath, finalFilePath);
       await fs.unlink(tempFilePath);
       res.redirect('/');
